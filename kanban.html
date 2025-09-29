@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Kanban — Drag & Drop</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Tablero Kanban — Drag & Drop</h1>
+    <a class="btn" href="index.html" style="margin-top:10px;display:inline-block">Volver al inicio</a>
+  </header>
+
+  <main class="container" style="margin-top:18px">
+    <section class="card" style="grid-column:1/-1">
+      <h2>Agregar tarea</h2>
+      <div class="kanban-form">
+        <input id="taskTitle" class="input" type="text" placeholder="Título de la tarea">
+        <select id="taskColumn" class="select">
+          <option value="todo">To Do</option>
+          <option value="inprogress">In Progress</option>
+          <option value="done">Done</option>
+        </select>
+        <button id="addTask" class="add-btn">Agregar</button>
+        <button id="clearBoard" class="delete-btn">Borrar todo</button>
+      </div>
+      <p class="small">Las tareas se guardan automáticamente en <strong>localStorage</strong>.</p>
+    </section>
+
+    <section class="card" style="grid-column:1/-1">
+      <div class="kanban" id="board">
+        <div class="column" data-column="todo">
+          <h3>To Do</h3>
+          <div class="task-list" id="todoList"></div>
+        </div>
+        <div class="column" data-column="inprogress">
+          <h3>In Progress</h3>
+          <div class="task-list" id="inprogressList"></div>
+        </div>
+        <div class="column" data-column="done">
+          <h3>Done</h3>
+          <div class="task-list" id="doneList"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/kanban.js"></script>
+</body>
+</html>
