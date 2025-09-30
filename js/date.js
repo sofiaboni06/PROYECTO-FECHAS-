@@ -1,4 +1,4 @@
-// date.js - contador de días usando Date nativo
+
 
 const dateInput = document.getElementById('dateInput');
 const setDateBtn = document.getElementById('setDate');
@@ -13,14 +13,14 @@ function startCounter() {
   if (!targetDate) return;
   if (intervalId) clearInterval(intervalId);
   updateCounter();
-  // actualiza cada 30 segundos (no hace falta cada segundo)
+  
   intervalId = setInterval(updateCounter, 30000);
 }
 
 function updateCounter() {
   const now = new Date();
   const t = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
-  // Si la fecha objetivo ya pasó en este año, considerar la del próximo año
+
   if (t < new Date(now.getFullYear(), now.getMonth(), now.getDate())) {
     t.setFullYear(now.getFullYear() + 1);
   }
@@ -36,7 +36,7 @@ function updateCounter() {
   }
 }
 
-// manejo de botones
+
 setDateBtn.addEventListener('click', () => {
   const v = dateInput.value;
   if (!v) {
@@ -49,12 +49,12 @@ setDateBtn.addEventListener('click', () => {
 
 christmasBtn.addEventListener('click', () => {
   const now = new Date();
-  // Navidad: 25 diciembre del año actual (si ya pasó, the logic en updateCounter ajusta)
+  
   targetDate = new Date(now.getFullYear(), 11, 25);
   startCounter();
 });
 
-// Mostrar fecha actual formateada y componentes usando Date methods (getFullYear/getMonth/getDate)
+
 function showNow() {
   const n = new Date();
   const year = n.getFullYear();

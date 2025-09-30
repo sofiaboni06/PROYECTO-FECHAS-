@@ -60,7 +60,7 @@ body{
   color:var(--muted);
 }
 
-/* Form common styles */
+
 .form-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
 .input, .select, .textarea {
   padding:8px 10px;border-radius:8px;border:1px solid #e5e7eb;background:white;min-width:0;
@@ -68,16 +68,16 @@ body{
 .input[type="text"], .input[type="password"], .input[type="date"]{width:100%}
 .small{font-size:0.85rem;color:var(--muted);margin-top:6px}
 
-/* Regex page */
+
 .regex-grid{display:grid;grid-template-columns:1fr;gap:14px}
 .result{padding:8px;border-radius:8px;background:#f8fafc;border:1px solid #e6eefb}
 
-/* Date page */
+
 .counter{
   display:flex;gap:12px;align-items:center;flex-wrap:wrap;
 }
 
-/* Kanban */
+
 .kanban{
   display:grid;
   grid-template-columns: repeat(3,1fr);
@@ -94,7 +94,7 @@ body{
 .task.dragging{opacity:0.5}
 .column.drag-over{outline:3px dashed rgba(43,124,255,0.14);}
 
-/* Kanban form */
+
 .kanban-form{display:flex;gap:8px;margin-bottom:10px}
 .add-btn{background:var(--success);color:white;padding:8px 10px;border-radius:8px;border:none;cursor:pointer}
 .delete-btn{background:var(--danger);color:white;padding:6px 8px;border-radius:8px;border:none;cursor:pointer}

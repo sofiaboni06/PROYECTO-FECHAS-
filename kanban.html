@@ -18,9 +18,9 @@
       <div class="kanban-form">
         <input id="taskTitle" class="input" type="text" placeholder="Título de la tarea">
         <select id="taskColumn" class="select">
-          <option value="todo">To Do</option>
-          <option value="inprogress">In Progress</option>
-          <option value="done">Done</option>
+          <option value="todo">Por Hacer</option>
+          <option value="inprogress">En proceso</option>
+          <option value="done">Realizadas</option>
         </select>
         <button id="addTask" class="add-btn">Agregar</button>
         <button id="clearBoard" class="delete-btn">Borrar todo</button>
@@ -31,15 +31,15 @@
     <section class="card" style="grid-column:1/-1">
       <div class="kanban" id="board">
         <div class="column" data-column="todo">
-          <h3>To Do</h3>
+          <h3>Por hacer</h3>
           <div class="task-list" id="todoList"></div>
         </div>
         <div class="column" data-column="inprogress">
-          <h3>In Progress</h3>
+          <h3>En proceso</h3>
           <div class="task-list" id="inprogressList"></div>
         </div>
         <div class="column" data-column="done">
-          <h3>Done</h3>
+          <h3>Realizadas</h3>
           <div class="task-list" id="doneList"></div>
         </div>
       </div>

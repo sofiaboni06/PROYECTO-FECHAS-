@@ -1,15 +1,13 @@
-// kanban.js - tablero con Drag & Drop y persistencia en localStorage
 
-// Clase Task (POO) usada para demostrar Programación Orientada a Objetos
 class Task {
   constructor(id, title, column) {
     this.id = id;
     this.title = title;
-    this.column = column; // 'todo' | 'inprogress' | 'done'
+    this.column = column; 
   }
 }
 
-// Selectores
+
 const todoList = document.getElementById('todoList');
 const inprogressList = document.getElementById('inprogressList');
 const doneList = document.getElementById('doneList');
@@ -18,9 +16,9 @@ const titleInput = document.getElementById('taskTitle');
 const columnSelect = document.getElementById('taskColumn');
 const clearBoardBtn = document.getElementById('clearBoard');
 
-let tasks = []; // arreglo de Task
+let tasks = []; 
 
-// Persistencia
+
 const STORAGE_KEY = 'kanban_tasks_v1';
 
 function saveTasks() {
@@ -38,7 +36,7 @@ function loadTasks() {
   }
 }
 
-// Render
+
 function createTaskElement(task) {
   const div = document.createElement('div');
   div.className = 'task';
@@ -46,14 +44,14 @@ function createTaskElement(task) {
   div.dataset.id = task.id;
   div.textContent = task.title;
 
-  // eventos drag
+  
   div.addEventListener('dragstart', (e) => {
     e.dataTransfer.setData('text/plain', task.id);
     div.classList.add('dragging');
   });
   div.addEventListener('dragend', () => div.classList.remove('dragging'));
 
-  // doble clic para eliminar
+  
   div.addEventListener('dblclick', () => {
     if (confirm('Eliminar tarea?')) {
       tasks = tasks.filter(t => t.id !== task.id);
@@ -66,7 +64,7 @@ function createTaskElement(task) {
 }
 
 function renderBoard() {
-  // limpiar
+  
   [todoList, inprogressList, doneList].forEach(c => c.innerHTML = '');
   for (const t of tasks) {
     const el = createTaskElement(t);
@@ -76,7 +74,7 @@ function renderBoard() {
   }
 }
 
-// manejo columnas como drop targets
+
 const columns = document.querySelectorAll('.column');
 columns.forEach(col => {
   col.addEventListener('dragover', (e) => {
@@ -97,7 +95,7 @@ columns.forEach(col => {
   });
 });
 
-// agregar tarea
+
 addBtn.addEventListener('click', () => {
   const title = titleInput.value.trim();
   const column = columnSelect.value;
@@ -114,7 +112,7 @@ addBtn.addEventListener('click', () => {
   titleInput.focus();
 });
 
-// limpiar tablero
+
 clearBoardBtn.addEventListener('click', () => {
   if (!confirm('Borrar todas las tareas?')) return;
   tasks = [];
@@ -122,6 +120,6 @@ clearBoardBtn.addEventListener('click', () => {
   renderBoard();
 });
 
-// Inicializar
+
 loadTasks();
 renderBoard();
